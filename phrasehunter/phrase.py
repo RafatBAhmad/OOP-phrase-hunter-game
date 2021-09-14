@@ -1,33 +1,28 @@
 # Create your Phrase class logic here.
 class Phrase:
     
-    def __init__(self, phrase):
+    def __init__(self, phrase, letter):
         self.phrase = phrase.lower()
+        self.letter = letter
 
 
-    def display(self, phrase, letter):
-        display_phrase = list(phrase)
+    def display(self):
+        display_phrase = list(self.phrase)
         i = 0
-
-        
         if i in range(len(display_phrase)):
             for p in display_phrase:
                 if p == " ":
                     display_phrase[i] = " "
-                elif self.check_letter(p, letter):
+                elif self.check_letter(p):
                     display_phrase[i] = p
                 else:
                     display_phrase[i] = "_"
-                i +=1        
+                i +=1
         display_phrase = "".join(display_phrase)
-        print(display_phrase)
-        if self.check_complete(display_phrase):
-            print("You Win")
-        else:
-            print("Not done")
+        return display_phrase
 
-    # def display(self, phrase, letter):
-    #     display_phrase = list(phrase)
+    # def display(self, letter):
+    #     display_phrase = list(self.phrase)
     #     final_phrase = []
     #     for p in display_phrase:
     #         if p == " ":
@@ -44,15 +39,19 @@ class Phrase:
     #         print("Not done")    
             
 
-    def check_letter(self, p, letter):
-        return p in letter
+    def check_letter(self, p):
+        return p in self.letter
         
     def check_complete(self, display_list):
-        return "_" not in display_list
+        if "_" not in display_list:
+            print("Wooohooo, you win ^_^ ")
+            return True
+        else:
+            print("Sorry you lose =(")    
 
 
-phrase_guess = Phrase("hello world")
-letter = ["o","h","b","d","e","r","w"]
-phrase = "hello world"
-phrase_guess.display(phrase,letter)
+# phrase_guess = Phrase("hello world")
+# letter = ["o","h","l","d","e","r","w"]
+# phrase = "hello worLD"
+# phrase_guess.display(letter)
 
