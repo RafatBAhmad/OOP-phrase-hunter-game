@@ -16,7 +16,7 @@ class Phrase:
                 elif self.check_letter(p):
                     display_phrase[i] = p
                 else:
-                    display_phrase[i] = "_"
+                    display_phrase[i] = "_ "
                 i +=1
         display_phrase = "".join(display_phrase)
         return display_phrase
