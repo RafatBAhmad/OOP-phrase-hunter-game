@@ -1,5 +1,5 @@
 import random
-from phrase import Phrase
+from phrasehunter.phrase import Phrase
 import sys
 
 
